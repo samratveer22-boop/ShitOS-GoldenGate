@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GoldenGate WebOS</title>
+<style>
+*{box-sizing:border-box}body{margin:0;height:100vh;background:linear-gradient(135deg,#10243a,#050b12);color:white;font:14px Arial;overflow:hidden}
+#desk{height:calc(100% - 50px);padding:20px}
+.icon{width:70px;text-align:center;margin-bottom:20px;cursor:pointer;font-size:30px}
+.icon b{display:block;font-size:12px}
+#bar{position:fixed;bottom:0;width:100%;height:50px;background:#111c29dd;display:flex;align-items:center;padding:8px;gap:10px}
+button{background:#c89125;color:white;border:0;border-radius:7px;padding:10px;cursor:pointer}
+.win{position:absolute;top:100px;left:180px;width:400px;height:250px;background:#101c29;border:1px solid #456;border-radius:10px;box-shadow:0 10px 30px #000}
+.head{padding:10px;background:#1c2b3b;cursor:move}
+.close{float:right;background:#a33;padding:3px 8px}
+.content{padding:15px}
+</style>
+</head>
+
+<body>
+
+    <div id="desk">
+    <div class="icon" onclick="openWin('files')"><b>Files</b></div>
+    <div class="icon" onclick="openWin('🌐 Browser')">🌐<b>Browser</b></div>
+<div class="icon" onclick="openWin('📝 Notes')">📝<b>Notes</b></div>
+</div>
+<div id="bar">
+<button onclick="openwin('GoldenGate')"></button>
+<span>GoldenGate WebOS</span>
+</div>
+
+<script>
+    function openWin(name){let w=document.createElement("div");
+w.className="win";
+w.innerHTML=`<div class="head">${name}<button class="close" onclick="this.parentElement.parentElement.remove()">×</button></div>
+<div class="content">Welcome to ${name}.<br><br>This is a WebOS demo.</div>`;
+document.body.appendChild(w);
+drag(w);
+}
+function drag(w){let h=w. querySelector(".head").x,y; h.onmousedown=e=>{w.style.left=e.clientX-x+"px";
+w.style.top=e.clientY-y+"px";
+};w.style.left=e.clientX-x+"px";
+w.style.top=e.clientY-y+"px";
+};
+</script><>
+</body>
+</html>
